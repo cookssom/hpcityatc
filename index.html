@@ -18,11 +18,10 @@ $(document).ready(function() {
         vars = getUrlVars()
 
         if (vars) {
-                $("input[name=brandcode]").val(vars.code);
-                $("input[name=branduid]").val(vars.id);
-				$("input[id=size]").val(vars.size);
-				$("input[id=index]").val(vars.index);
-                $('#form').attr('action', 'http://www.atmos-seoul.com/shop/basket.html');
+                $("input[name=goodsno]").val(vars.sno);
+                $("input[opt[0]]").val(vars.size);
+				$("input[radio_opt]").val(vars.size);
+                $('#form').attr('action', 'https://www.hoopcity.co.kr/shop/order/order.php');
                 $('#form').submit();
         }
 })
@@ -30,24 +29,16 @@ $(document).ready(function() {
 </head>
 <body>
 
-<center><h1>ATMOS KR Carting...for CookSSOM</h1></center>
+<center><h1>Hoopcity Carting...for CookSSOM</h1></center>
 
-<form name="form" id="form" action="http://www.atmos-seoul.com/shop/basket.html" method="post">
-		<input hidden name="xcode" value="003">
-		<input hidden name="mcode" value="001">
-		<input hidden name="typep" value="Y">
-	        <input hidden name="ordertype" value="baro|parent.|layer">
-	        <input hidden name="brandcode" value="">
-		<input hidden name="branduid" value="">
-	        <input hidden name="opt_type" value="PS">
-		<input hidden name="option[basic][0][0][opt_id]" value="1">
-		<input hidden id="size" name="option[basic][0][0][opt_value]" value="">
-		<input hidden name="option[basic][0][0][opt_stock]" value="1">
-		<input hidden id="index" name="option[basic][0][0][sto_id]" value="">
-		<!--<input  name="_multi_ea[]" value="1">
-		<input  name="multi_ea[]" value="1">
-		<input  name="multi_ea[0][]" value="235">
-		<input  name="multi_ea[0][]" value="">-->
+<form name="form" id="form" action="https://www.hoopcity.co.kr/shop/order/order.php" method="post">
+        <input hidden name="mode" value="addItem">
+        <input hidden name="goodsno" value="">
+		<input hidden name="goodsCoupon" value="0">
+        <input hidden name="ea" value="1">
+		<input hidden name="opt[0]" value="">
+        <input hidden name="radio_opt" value="">
+
 		
 
 </form>
